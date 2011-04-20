@@ -37,8 +37,8 @@ public class EssEmEssV1 extends Activity implements OnClickListener {
 				server.login(usernameText.getText().toString(), passwordText.getText().toString());
 				
 				//TEMP:
-				//Intent messages = new Intent(EssEmEssV1.this, Messages.class); //Byter activity
-				//startActivity(messages);									//Byter activity
+				Intent messages = new Intent(EssEmEssV1.this, Messages.class); //Byter activity
+				startActivity(messages);									//Byter activity
 				//TEMP
 				
 				
@@ -55,8 +55,8 @@ public class EssEmEssV1 extends Activity implements OnClickListener {
 		}
 	}
 	
-protected void onStop(){
-	Log.i("bla", "ONSTOP");
+//protected void onStop(){
+	//Log.i("bla", "ONSTOP");
 	//LOGGA UT HÄR!!! (tror jag! ;))
-}
+//}
 }

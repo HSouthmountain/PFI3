@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class Messages extends Activity implements OnClickListener {
     
-	Essemmess server = EssemmessHelper.getServer(this);
+	//Essemmess server = EssemmessHelper.getServer(this);
 	
 	/** Called when the activity is first created. */
     @Override
@@ -18,21 +18,21 @@ public class Messages extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.messages);
         
-    }
+   }
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		EditText sendText = (EditText) findViewById(R.id.editTextMessageToSend);
-        EditText getText = (EditText) findViewById(R.id.editTextMessageReceivedSent);
+		EditText getText = (EditText) findViewById(R.id.editTextMessageReceivedSent);
         EditText sendTag = (EditText) findViewById(R.id.editTextMessageToSend);
 		
         
-        switch (v.getId()) {
+       switch (v.getId()) {
 			case R.id.buttonSend:
 				
 				//Skicka meddelande
-				server.post(sendText.getText().toString(), "test");
+				//server.post(sendText.getText().toString(), "test");
 				
 				
 				break;
@@ -40,10 +40,8 @@ public class Messages extends Activity implements OnClickListener {
 			case R.id.buttonGet:
 				
 				//Hämta meddelande + mitt
-			server.read("test");
+			//server.read("test");
 				break;
 		}
-		
 	}
-    
-}
+	}
