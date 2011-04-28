@@ -4,13 +4,23 @@ import se.k3.goransson.andreas.essemmesslib.Essemmess;
 import se.k3.goransson.andreas.essemmesslib.EssemmessHelper;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class Messages extends Activity implements OnClickListener {
     
-	//Essemmess server = EssemmessHelper.getServer(this);
+	//Importerar credentials från activity1
+	//Bundle share = getIntent().getExtras();
+	//Bundle shared = getIntent().getBundleExtra("");
+	Bundle share;
+	
+   
+    
+    //Initierar ett server-objekt
+	Essemmess server = EssemmessHelper.getServer(this);
 	
 	/** Called when the activity is first created. */
     @Override
@@ -18,6 +28,20 @@ public class Messages extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.messages);
         
+        //Set-up mina clickListeners
+        Button sendButton = (Button) findViewById(R.id.buttonSend);
+        sendButton.setOnClickListener(this);
+        Button getButton = (Button) findViewById(R.id.buttonGet);
+        getButton.setOnClickListener(this);
+       
+        
+        //Synkar mina share-objekt.
+        share = getIntent().getExtras();
+        String username = share.getString("username");
+        String password = share.getString("password");
+        
+        //Loggar in på servern med credentials från startskärmen...
+        server.login(username, password);
    }
 
 	@Override
@@ -32,7 +56,8 @@ public class Messages extends Activity implements OnClickListener {
 			case R.id.buttonSend:
 				
 				//Skicka meddelande
-				//server.post(sendText.getText().toString(), "test");
+				Log.i("send", "messageSent");
+				server.post(sendText.getText().toString(), "HS");
 				
 				
 				break;
@@ -40,7 +65,8 @@ public class Messages extends Activity implements OnClickListener {
 			case R.id.buttonGet:
 				
 				//Hämta meddelande + mitt
-			//server.read("test");
+			server.read("test");
+			
 				break;
 		}
 	}
