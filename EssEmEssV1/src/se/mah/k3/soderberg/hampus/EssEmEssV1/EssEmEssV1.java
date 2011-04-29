@@ -1,3 +1,4 @@
+
 package se.mah.k3.soderberg.hampus.EssEmEssV1;
 
 import se.k3.goransson.andreas.essemmesslib.Essemmess;
@@ -27,9 +28,12 @@ public class EssEmEssV1 extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.main);//Ändra till main, bara för debug
         Button loginButton = (Button) findViewById(R.id.button1);
         loginButton.setOnClickListener(this);
+        
+        //temp
+        
     }
 
 	@Override

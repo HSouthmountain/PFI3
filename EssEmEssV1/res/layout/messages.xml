@@ -10,14 +10,21 @@
             <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top">
                 <TextView android:text="Skriv meddelande:" android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp"></TextView>
             </TableRow>
-            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow2">
-                <EditText android:id="@+id/editTextMessageToSend" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Ditt meddelande.."></EditText>
-                <Button android:text="Send" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/buttonSend"></Button>
+            <TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tableRow2" android:gravity="left" android:layout_gravity="left">
+                <EditText android:id="@+id/editTextSendTag" android:layout_height="wrap_content" android:maxLength="5" android:text="Tag.." android:layout_gravity="left"></EditText>
+            </TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow4">
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editTextMessageToSend" android:text="Ditt meddelande.."></EditText>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow5" android:layout_height="wrap_content" android:layout_width="wrap_content">
+                <Button android:layout_width="wrap_content" android:text="Send" android:id="@+id/buttonSend" android:layout_height="wrap_content"></Button>
             </TableRow>
             <TextView android:text="Konversation:" android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp"></TextView>
-            <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="match_parent">
-                <EditText android:text="Mottagna/skickade.." android:id="@+id/editTextMessageReceivedSent" android:layout_width="wrap_content" android:layout_gravity="fill_vertical" android:layout_height="400dip"></EditText>
-                <Button android:text="Get" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/buttonGet"></Button>
+            <TableRow android:id="@+id/tableRow3" android:layout_height="match_parent" android:layout_width="wrap_content">
+                <ListView android:layout_width="wrap_content" android:id="@+id/listViewReceivedMessages" android:layout_height="wrap_content"></ListView>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow6" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <Button android:layout_width="wrap_content" android:text="Get" android:id="@+id/buttonGet" android:layout_height="wrap_content"></Button>
             </TableRow>
         </TableLayout>
     </FrameLayout>
