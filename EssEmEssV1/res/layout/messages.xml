@@ -8,18 +8,18 @@
         <ImageView android:id="@+id/imageView1" android:background="@drawable/leather_back" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
         <TableLayout android:id="@+id/tableLayout1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center|top">
             <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top">
-                <TextView android:text="Skriv meddelande:" android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp"></TextView>
+                <TextView android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp" android:text="Write a message:"></TextView>
             </TableRow>
             <TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tableRow2" android:gravity="left" android:layout_gravity="left">
                 <EditText android:id="@+id/editTextSendTag" android:layout_height="wrap_content" android:maxLength="5" android:text="Tag.." android:layout_gravity="left"></EditText>
             </TableRow>
             <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tableRow4">
-                <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editTextMessageToSend" android:text="Ditt meddelande.."></EditText>
+                <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editTextMessageToSend" android:text="Your message.."></EditText>
             </TableRow>
             <TableRow android:id="@+id/tableRow5" android:layout_height="wrap_content" android:layout_width="wrap_content">
                 <Button android:layout_width="wrap_content" android:text="Send" android:id="@+id/buttonSend" android:layout_height="wrap_content"></Button>
             </TableRow>
-            <TextView android:text="Konversation:" android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp"></TextView>
+            <TextView android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp" android:text="Conversation:"></TextView>
             <TableRow android:id="@+id/tableRow3" android:layout_height="match_parent" android:layout_width="wrap_content">
                 <ListView android:layout_width="wrap_content" android:id="@+id/listViewReceivedMessages" android:layout_height="wrap_content"></ListView>
             </TableRow>
