@@ -17,14 +17,14 @@
                 <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/editTextMessageToSend" android:text="Your message.."></EditText>
             </TableRow>
             <TableRow android:id="@+id/tableRow5" android:layout_height="wrap_content" android:layout_width="wrap_content">
-                <Button android:layout_width="wrap_content" android:text="Send" android:id="@+id/buttonSend" android:layout_height="wrap_content"></Button>
+                <Button android:layout_width="wrap_content" android:id="@+id/buttonSend" android:layout_height="wrap_content" android:text="Send message"></Button>
             </TableRow>
             <TextView android:layout_height="wrap_content" android:textColor="#FFD700" android:id="@+id/textViewMessage" android:layout_width="wrap_content" android:gravity="left" android:textSize="24sp" android:text="Conversation:"></TextView>
             <TableRow android:id="@+id/tableRow3" android:layout_height="match_parent" android:layout_width="wrap_content">
                 <ListView android:layout_width="wrap_content" android:id="@+id/listViewReceivedMessages" android:layout_height="wrap_content"></ListView>
             </TableRow>
             <TableRow android:id="@+id/tableRow6" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <Button android:layout_width="wrap_content" android:text="Get" android:id="@+id/buttonGet" android:layout_height="wrap_content"></Button>
+                <Button android:layout_width="wrap_content" android:id="@+id/buttonGet" android:layout_height="wrap_content" android:text="Get messages"></Button>
             </TableRow>
         </TableLayout>
     </FrameLayout>

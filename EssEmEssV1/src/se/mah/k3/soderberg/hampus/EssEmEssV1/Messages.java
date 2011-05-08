@@ -34,12 +34,10 @@ public class Messages extends Activity implements OnClickListener,
 	// findViewById(R.id.listViewReceivedMessages);
 
 	private ListView receivedMessages;
-	private String lv_arr[] = { "Android", "iPhone", "BlackBerry",
-			"AndroidPeople" };
 
 	// Initierar ett server-objekt
 	Essemmess server = EssemmessHelper.getServer(this);
-	ArrayAdapter<String> adapter;
+	//ArrayAdapter<String> adapter;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -47,8 +45,15 @@ public class Messages extends Activity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.messages);
 
-		receivedMessages = (ListView) findViewById(R.id.listViewReceivedMessages);
-	 receivedMessages.setAdapter(adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 , stringMessages));
+	receivedMessages = (ListView) findViewById(R.id.listViewReceivedMessages);
+	 //receivedMessages.setAdapter(adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 , stringMessages));
+	 //receivedMessages.setAdapter(adapter);
+	
+	//HÄR!!!
+	/*ArrayList<String>data = new ArrayList<String>();
+	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,data);
+	receivedMessages.setAdapter(adapter);
+	data.add("No messages!");*/
 
 		// Set-up mina clickListeners
 		Button sendButton = (Button) findViewById(R.id.buttonSend);
@@ -89,9 +94,12 @@ public class Messages extends Activity implements OnClickListener,
 		case R.id.buttonGet:
 
 			// Hämta meddelande + mitt
+			
+			
 
-			server.read("test");
+			server.read("HS");
 Log.i("press","getbuttonclicked");
+//adapter.notifyDataSetChanged();
 			break;
 		}
 	}
@@ -106,25 +114,42 @@ Log.i("press","getbuttonclicked");
 		// String stringMessages[] = null;
 		//stringMessages = new String[messagesObjects.size()];
 		
-		int i = messagesObjects.size()-1;
-		stringMessages = new String[i];
+		//int i = messagesObjects.size()-1;
+		int i = 9998;
+		stringMessages = new String[99999];
 		
-		Log.i("h", "hej"+messagesObjects.size()+"hej");
+		//Log.i("h", "hej"+(messagesObjects.size()-1)+"hej");
 		for (Post p : messagesObjects) {
 			stringMessages[i] = p.message;
-			Log.i("test2"+i, p.message);
+			
+			if (i != 1) {
+			//Log.i("test2"+i, p.message);
 			//adapter.insert(p.message, i);
 			i--;
+			}
+			
+			
 		}
 		
-		adapter.setNotifyOnChange(true);
-		adapter.notifyDataSetChanged();
-		adapter.notifyDataSetInvalidated();
+		//Borde skapas längre upp och sedan tillkallas vid behov... (exempelvis här)
+		ArrayList<String>data = new ArrayList<String>();
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,data);
+		receivedMessages.setAdapter(adapter);
 		
-		Log.i("try", stringMessages[0]);
-		Log.i("try", stringMessages[1]);
-		Log.i("try", stringMessages[2]);
-		Log.i("try", stringMessages[3]);
+		for (int e = 9998; e>i; e--){
+			data.add(stringMessages[e]);
+		}
+		
+		adapter.notifyDataSetChanged();
+		
+		//adapter.setNotifyOnChange(true);
+		//adapter.notifyDataSetChanged();
+		//adapter.notifyDataSetInvalidated();
+		
+		//Log.i("try", stringMessages[9997]);
+		//Log.i("try", stringMessages[9996]);
+		//Log.i("try", stringMessages[9995]);
+		//Log.i("try", stringMessages[9994]);
 }
 
 	@Override
